@@ -1,9 +1,10 @@
 .App {
+  background-color: rgb(241, 222, 222);
   text-align: center;
-  margin: 20px auto 0; 
+ 
   width: 100%; 
   display: flex;
   justify-content: center; /* Horizontally center */
-  align-items: flex-start; /* Align to the top of the container */
+  align-items: center; /* Align to the top of the container */
   min-height: 100vh; /* Ensure the full height of the viewport is considered */
 }

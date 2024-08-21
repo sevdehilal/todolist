@@ -18,7 +18,7 @@ const TodoCard = () => {
   };
 
   const handleDeleteClick = (index) => {
-    const newTasks = tasks.filter((_, taskIndex) => taskIndex !== index);
+    const newTasks = tasks.filter((taskIndex) => taskIndex !== index);
     setTasks(newTasks);
   };
 
@@ -27,31 +27,33 @@ const TodoCard = () => {
     <div>
       <Card
         title={
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+          <div style={{ padding:'25px',display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
             <Title level={2} style={{ margin: 0 , color: '#ff9c6e' }}>To-Do List</Title>
           </div>
         }
-        style={{ width: 700, height: 700, backgroundColor: '#b5f5ec', color: '#fff', borderColor: '#ff9c6e' }}
+        style={{ width: 700, height: 700, backgroundColor: '#703656', color: '#fff', borderColor: '#ff9c6e' }}
       >
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
           <Input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Yeni görev ekle..."
-            style={{ flex: 1, padding: '6px', marginRight: '10px' }}
+            placeholder="Add new to do..."
+            style={{ flex: 1, padding: '20px', marginRight: '10px' }}
           />
           <Button
             type="primary"
             icon={<PlusOutlined />}
             onClick={handleAddClick}
-            style={{ backgroundColor: '#fff', color: '#000', border: '1px solid #000', borderRadius: '4px', padding: '0 15px' }}
+            style={{ backgroundColor: '#fff', color: '#000', border: '1px solid #000', borderRadius: '4px', padding: '25px' }}
           />
         </div>
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
+        <ul style={{ listStyleType: 'none', padding: 0 , maxHeight: '475px', overflow: 'auto' }}>
           {tasks.map((task, index) => (
             <li
               key={index}
               style={{
+                marginBottom: '10px',
+                rowGap: '10px',
                 backgroundColor: '#fff',
                 color: '#000',
                 padding: '6px',
@@ -78,4 +80,3 @@ const TodoCard = () => {
 };
 
 export default TodoCard;
-
